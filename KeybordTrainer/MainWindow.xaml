@@ -1,0 +1,1143 @@
+﻿<Window x:Class="KeybordTrainer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KeybordTrainer"
+        mc:Ignorable="d"
+        Title="Keybord Trainer" Height="450" Width="800">
+    <Grid FocusManager.FocusedElement="{Binding ElementName=TextBox1}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            
+            <Viewbox Grid.Column="0"
+                   Grid.Row="0">
+                <Label x:Name="Label_Speed">
+                    Speed: 0 chars/min</Label>
+            </Viewbox>
+            <Viewbox  Grid.Column="1"
+                      Grid.Row="0">
+            <Label x:Name="Label_Fails">
+                Fails: 0
+            </Label>
+            </Viewbox>
+
+            <Grid Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Viewbox Grid.Column="0">
+                    <Label x:Name="SliderValueLabel"
+                       Content="Difficult: 1"
+                       FontSize="18"
+                       Margin="0, 5"/>
+                </Viewbox>
+               
+                
+                <Slider x:Name="Slider1"
+                        Grid.Column="1" 
+                        VerticalAlignment="Center"
+                        Value="1"
+                        Minimum="1"
+                        Maximum="5"
+                        IsSelectionRangeEnabled="True"
+                        IsSnapToTickEnabled="True"
+                        TickFrequency="1"
+                        ValueChanged="Slider_ValueChanged"
+                        />
+            </Grid>
+                           
+            <Viewbox Grid.Row="1"
+                    Grid.Column="2"
+                     Stretch="Fill"
+                     Margin="10">
+            <Button x:Name="StartButton"
+                    FontSize="20"
+                    Width="150"
+                    Content="Start" Click="Start_ButtonClick"                   
+                    />
+            </Viewbox>
+            <Viewbox Grid.Row="1"
+                    Grid.Column="3"
+                     Stretch="Fill"
+                     Margin="10"
+                     >
+            <Button x:Name="StopButton"
+                    FontSize="20"
+                    Width="150"
+                    Content="Stop" Click="Stop_ButtonClick"               
+                    />
+            </Viewbox>
+        </Grid>
+
+     
+            <TextBox x:Name="TextBox1" 
+                 Grid.Row="2"
+                 Grid.RowSpan="2"
+                 Background="LightBlue"
+                 TextWrapping="Wrap"
+                 FontSize="20"
+                 
+                 ></TextBox>
+        
+        
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+               <Viewbox Stretch="Fill">
+               <local:TeButton x:Name="Oem3"
+                       Background="HotPink"
+                       BorderBrush="HotPink"
+                       BorderThickness="0"
+                       Content="`"
+                       FontSize="15"
+                       Width="15"
+                       />
+               </Viewbox>
+            </Border>
+            <Border Grid.Column="1"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="D1"
+                        Background="HotPink"
+                        BorderBrush="HotPink"
+                        BorderThickness="0"
+                        Content="1"
+                        FontSize="15"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="2"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="D2" 
+                        Background="HotPink"
+                        BorderBrush="HotPink"
+                        BorderThickness="0"
+                        Content="2"
+                        FontSize="15"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="3"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="D3"
+                        Background="Yellow"
+                        BorderBrush="Yellow"
+                        BorderThickness="0"
+                        Content="3"
+                        FontSize="15"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="4"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="D4"
+                        Background="LightGreen"
+                        BorderBrush="LightGreen"
+                        BorderThickness="0"
+                        Content="4"
+                        FontSize="15"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="5"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="D5"
+                        Background="LightSkyBlue"
+                        BorderBrush="Yellow"
+                        BorderThickness="0"
+                        Content="5"
+                        FontSize="15"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="6"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="D6" 
+                        Background="LightSkyBlue"
+                        BorderBrush="LightSkyBlue"
+                        BorderThickness="0"
+                        Content="6"
+                        FontSize="15"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="7"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="D7"
+                        Background="MediumOrchid"
+                        BorderBrush="MediumOrchid"
+                        BorderThickness="0"
+                        Content="7"
+                        FontSize="15"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="8"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="D8"
+                        Background="MediumOrchid"
+                        BorderBrush="MediumOrchid"
+                        BorderThickness="0"
+                        Content="8"
+                        FontSize="15"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="9"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="D9"
+                        Background="HotPink"
+                        BorderBrush="HotPink"
+                        BorderThickness="0"
+                        Content="9"
+                        FontSize="15"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="10"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="D0"
+                        Background="Yellow"
+                        BorderBrush="Yellow"
+                        BorderThickness="0"
+                        Content="0"
+                        FontSize="15"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="11"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="OemMinus"
+                        Background="LightGreen"
+                        BorderBrush="LightGreen"
+                        BorderThickness="0"
+                        Content="-"
+                        FontSize="15"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="12"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="OemPlus"
+                        Background="LightGreen"
+                        BorderBrush="LightGreen"
+                        BorderThickness="0"
+                        Content="="
+                        FontSize="15"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="13"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="Back" 
+                        Background="LightGray"
+                        BorderBrush="LightGray"
+                        BorderThickness="0"
+                        Content="Backspace"
+                        FontSize="2.5"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+        </Grid>
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="Tab"
+                        Background="LightGray"
+                        BorderBrush="LightGray"
+                        BorderThickness="0"
+                        Content="Tab"
+                        FontSize="4"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="1"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="Q"
+                       Background="HotPink"
+                       BorderBrush="HotPink"
+                       BorderThickness="0"
+                       Content="q"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="2"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="W" 
+                       Background="Yellow"
+                       BorderBrush="Yellow"
+                       BorderThickness="0"
+                       Content="w"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="3"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="E" 
+                       Background="LightGreen"
+                       BorderBrush="LightGreen"
+                       BorderThickness="0"
+                       Content="e"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="4"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="R" 
+                       Background="LightSkyBlue"
+                       BorderBrush="LightSkyBlue"
+                       BorderThickness="0"
+                       Content="r"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="5"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="T" 
+                       Background="LightSkyBlue"
+                       BorderBrush="LightSkyBlue"
+                       BorderThickness="0"
+                       Content="t"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="6"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="Y" 
+                       Background="MediumOrchid"
+                       BorderBrush="MediumOrchid"
+                       BorderThickness="0"
+                       Content="y"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="7"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="U" 
+                       Background="MediumOrchid"
+                       BorderBrush="MediumOrchid"
+                       BorderThickness="0"
+                       Content="u"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="8"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="I"
+                       Background="HotPink"
+                       BorderBrush="HotPink"
+                       BorderThickness="0"
+                       Content="i"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="9"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="O" 
+                       Background="Yellow"
+                       BorderBrush="Yellow"
+                       BorderThickness="0"
+                       Content="o"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="10"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="P" 
+                       Background="LightGreen"
+                       BorderBrush="LightGreen"
+                       BorderThickness="0"
+                       Content="p"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="11"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="OemOpenBrackets" 
+                       Background="LightGreen"
+                       BorderBrush="LightGreen"
+                       BorderThickness="0"
+                       Content="["
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="12"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="Oem6"
+                       Background="LightGreen"
+                       BorderBrush="LightGreen"
+                       BorderThickness="0"
+                       Content="]"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="13"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="Oem5" 
+                       Background="LightGreen"
+                       BorderBrush="LightGreen"
+                       BorderThickness="0"
+                       Content="\"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+        </Grid>
+        <Grid Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="Capital"
+                        Background="LightGray"
+                        BorderBrush="LightGray"
+                        BorderThickness="0"
+                        Content="Caps Lock"
+                        FontSize="2.5"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="1"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="A" 
+                       Background="HotPink"
+                       BorderBrush="HotPink"
+                       BorderThickness="0"
+                       Content="a"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="2"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="S" 
+                       Background="Yellow"
+                       BorderBrush="Yellow"
+                       BorderThickness="0"
+                       Content="s"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="3"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="D" 
+                       Background="LightGreen"
+                       BorderBrush="LightGreen"
+                       BorderThickness="0"
+                       Content="d"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="4"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="F" 
+                       Background="LightSkyBlue"
+                       BorderBrush="LightSkyBlue"
+                       BorderThickness="0"
+                       Content="f"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="5"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="G" 
+                       Background="LightSkyBlue"
+                       BorderBrush="LightSkyBlue"
+                       BorderThickness="0"
+                       Content="g"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="6"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="H" 
+                       Background="MediumOrchid"
+                       BorderBrush="MediumOrchid"
+                       BorderThickness="0"
+                       Content="h"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="7"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="J" 
+                       Background="MediumOrchid"
+                       BorderBrush="MediumOrchid"
+                       BorderThickness="0"
+                       Content="j"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="8"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="K" 
+                       Background="HotPink"
+                       BorderBrush="HotPink"
+                       BorderThickness="0"
+                       Content="k"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="9"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="L" 
+                       Background="Yellow"
+                       BorderBrush="Yellow"
+                       BorderThickness="0"
+                       Content="l"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="10"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="Oem1"
+                       Background="LightGreen"
+                       BorderBrush="LightGreen"
+                       BorderThickness="0"
+                       Content=";"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="11"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="OemQuotes" 
+                       Background="LightGreen"
+                       BorderBrush="LightGreen"
+                       BorderThickness="0"
+                       Content="'"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="12"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="Return"
+                        Background="LightGray"
+                        BorderBrush="LightGray"
+                        BorderThickness="0"
+                        Content="Enter"
+                        FontSize="2.5"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+        </Grid>
+        <Grid Grid.Row="7">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2.5*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="LeftShift"
+                        Background="LightGray"
+                        BorderBrush="LightGray"
+                        BorderThickness="0"
+                        Content="Shift"
+                        FontSize="2.5"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="1"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="Z"
+                       Background="HotPink"
+                       BorderBrush="HotPink"
+                       BorderThickness="0"
+                       Content="z"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="2"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="X" 
+                       Background="Yellow"
+                       BorderBrush="Yellow"
+                       BorderThickness="0"
+                       Content="x"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="3"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="C" 
+                       Background="LightGreen"
+                       BorderBrush="LightGreen"
+                       BorderThickness="0"
+                       Content="c"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="4"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="V" 
+                       Background="LightSkyBlue"
+                       BorderBrush="LightSkyBlue"
+                       BorderThickness="0"
+                       Content="v"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="5"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="B" 
+                       Background="LightSkyBlue"
+                       BorderBrush="LightSkyBlue"
+                       BorderThickness="0"
+                       Content="b"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="6"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="N" 
+                       Background="MediumOrchid"
+                       BorderBrush="MediumOrchid"
+                       BorderThickness="0"
+                       Content="n"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="7"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="M" 
+                       Background="MediumOrchid"
+                       BorderBrush="MediumOrchid"
+                       BorderThickness="0"
+                       Content="m"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="8"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="OemComma"
+                       Background="HotPink"
+                       BorderBrush="HotPink"
+                       BorderThickness="0"
+                       Content=","
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="9"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="OemPeriod"
+                       Background="Yellow"
+                       BorderBrush="Yellow"
+                       BorderThickness="0"
+                       Content="."
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="10"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="OemQuestion"
+                       Background="LightGreen"
+                       BorderBrush="LightGreen"
+                       BorderThickness="0"
+                       Content="/"
+                       FontSize="15"
+                       Width="15"
+                       />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="11"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="RightShift"
+                        Background="LightGray"
+                        BorderBrush="LightGray"
+                        BorderThickness="0"
+                        Content="Shift"
+                        FontSize="2.5"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+        </Grid>
+        <Grid Grid.Row="8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton 
+                        Background="LightGray"
+                        BorderBrush="LightGray"
+                        BorderThickness="0"
+                        Content="Ctrl"
+                        FontSize="4"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="1"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton Background="LightGray"
+                        BorderBrush="LightGray"
+                        BorderThickness="0"
+                        Content="Win"
+                        FontSize="4"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="2"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton Background="LightGray"
+                        BorderBrush="LightGray"
+                        BorderThickness="0"
+                        Content="Alt"
+                        FontSize="4"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="3"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton x:Name="Space"
+                        Background="LightSalmon"
+                        BorderBrush="LightSalmon"
+                        BorderThickness="0"
+                        Content="Space"
+                        FontSize="5"
+                        Width="50"
+                        />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="4"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton Background="LightGray"
+                        BorderBrush="LightGray"
+                        BorderThickness="0"
+                        Content="Alt"
+                        FontSize="4"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="5"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton Background="LightGray"
+                        BorderBrush="LightGray"
+                        BorderThickness="0"
+                        Content="Win"
+                        FontSize="4"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+            <Border Grid.Column="6"
+                BorderBrush="Black"
+                BorderThickness="3"
+                CornerRadius="5"
+                Margin="4">
+                <Viewbox Stretch="Fill">
+                    <local:TeButton Background="LightGray"
+                        BorderBrush="LightGray"
+                        BorderThickness="0"
+                        Content="Ctrl"
+                        FontSize="4"
+                        Width="15"
+                        />
+                </Viewbox>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
