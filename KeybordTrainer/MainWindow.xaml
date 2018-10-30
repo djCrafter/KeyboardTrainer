@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:KeybordTrainer"
         mc:Ignorable="d"
         Title="Keybord Trainer" Height="450" Width="800">
-    <Grid FocusManager.FocusedElement="{Binding ElementName=TextBox1}">
+    <Grid FocusManager.FocusedElement="{Binding ElementName=TextBox1}"
+          Background="Tomato">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
