@@ -11,6 +11,9 @@ namespace KeybordTrainer
     /// </summary>
     class Core
     {
+        //Test string//
+        string newString;
+
         /// <summary>
         /// Главная строка.
         /// </summary>
