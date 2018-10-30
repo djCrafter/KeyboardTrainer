@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Keybord Trainer" Height="450" Width="800">
     <Grid FocusManager.FocusedElement="{Binding ElementName=TextBox1}"
-          Background="Tomato">
+          Background="Green">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
